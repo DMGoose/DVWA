@@ -110,7 +110,13 @@ jobs:
       - name: Run Snyk for PHP
         uses: snyk/actions/php@master
         with:
-          args: monitor --severity-threshold=high
+          args: test --file=composer.json --severity-threshold=high --prune-repeated-subdependencies
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          
+      - name: Upload Snyk Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: snyk-report
+          path: snyk-report.json
 
