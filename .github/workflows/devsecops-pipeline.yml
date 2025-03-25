@@ -110,7 +110,7 @@ jobs:
       - name: Run Snyk for PHP
         uses: snyk/actions/php@master
         with:
-          args: test --file=composer.json --severity-threshold=high --prune-repeated-subdependencies
+          args: test --file=composer.json --severity-threshold=high --json-file-output=snyk-report.json
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
