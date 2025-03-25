@@ -114,10 +114,10 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
-      - name: Upload Snyk Report
-        uses: actions/upload-artifact@v3
-        continue-on-error: true
-        with:
-          name: snyk-report
-          path: snyk-report.json
+      # - name: Upload Snyk Report
+      #   uses: actions/upload-artifact@v3
+      #   continue-on-error: true
+      #   with:
+      #     name: snyk-report
+      #     path: snyk-report.json
 
