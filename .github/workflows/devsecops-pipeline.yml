@@ -133,7 +133,7 @@ jobs:
 
       - name: Run Snyk test
         run: |
-          snyk test --file=composer.json --severity-threshold=high --json-file-output=snyk-report.json
+          snyk test --severity-threshold=high --json-file-output=snyk-report.json
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
